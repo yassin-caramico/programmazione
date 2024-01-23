@@ -1,6 +1,41 @@
 <html>
   <head>
-    <title>top anime preferiti</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>top 10 anime</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+h1 {
+  font-size: 3em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #080808;
+  position: relative;
+  letter-spacing: 4px;
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to right, #4CAF50, #FF4081, transparent);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to left, #4CAF50, #FF4081, transparent);
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+    </style>
   </head>
   <body>
     <h1>top anime preferiti</h1>
