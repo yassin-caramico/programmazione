@@ -58,10 +58,10 @@ img {
   max-width: 30%;
   height: auto;
   display: inline-block;
-  float: right;
-  margin-right: 600px;
-  margin-top: -230px; /* Regola il margine superiore per spostare l'immagine verso l'alto */
   vertical-align: middle;
+  position: relative; /* Abilita il posizionamento relativo */
+  top: -220px; /* Sposta l'immagine verso il basso di 20px rispetto alla sua posizione originale */
+  left: 330px;
 }
 .img-hover:hover {
   /* Aggiungi gli effetti desiderati qui */
@@ -98,4 +98,68 @@ li {
   margin-bottom: 10px;
   font-size: 24px; /* Dimensioni del testo */
   font-weight: bold; /* Spessore del testo */
+}
+.container {
+  text-align: center;
+}
+
+@keyframes burn {
+  0% {
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 10px #f00, 0 0 20px rgb(202, 81, 11), 0 0 30px #f00,
+      0 0 40px #f00, 0 0 50px #f00, 0 0 60px rgb(8, 228, 155), 0 0 70px #f00,
+      0 0 80px #f00;
+  }
+  50% {
+    color: rgb(0, 0, 0);
+    text-shadow: none;
+  }
+  100% {
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.336), 0 0 20px #f00, 0 0 30px #f00,
+      0 0 40px #f00, 0 0 50px #f00, 0 0 60px #f00, 0 0 70px #f00, 0 0 80px #f00;
+  }
+}
+.title,
+.burning-text {
+  animation: burn 5s infinite;
+  margin-top: 20px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.column {
+  display: flex;
+}
+
+.space {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  background-color: #f0f0f0;s
+}
+.cell {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+.cell-content {
+  flex: 1;
+}
+
+.cell-empty {
+  width: 20px; /* Larghezza dello spazio vuoto */
 }
