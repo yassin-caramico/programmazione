@@ -14,6 +14,103 @@
  * animation text-focus-in
  * ----------------------------------------
  */
+
+img {
+  width: 300px;
+  height: 200px;
+  max-width: 30%;
+  height: auto;
+}
+body {
+  background-color: grey;
+}
+h2 {
+  font-weight: bold;
+}
+li {
+  font-weight: bold;
+}
+img {
+  position: relative;
+  right: 200px;
+}
+
+.cube-container {
+  transform: scale(1);
+  position: absolute;
+  left: 900px;
+  top: 300px;
+  width: 100px;
+  height: 200px;
+  perspective: 6000px;
+  margin: 0 auto;
+}
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 10s infinite linear;
+}
+.face {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #000;
+  background-size: cover;
+}
+.front {
+  transform: translateZ(75px);
+  background-image: url(https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p186544_b_v9_ad.jpg);
+}
+.back {
+  transform: rotateY(180deg) translateZ(75px);
+  background-image: url(https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10701949_b_v9_ah.jpg);
+}
+.right {
+  transform: rotateY(90deg) translateZ(75px);
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrp6gHthJB8005pWhIKBG-UsVw1bVlrbkfog&usqp=CAU);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(75px);
+  background-image: url(https://images.everyeye.it/img-singole/articolo-66773.jpg);
+}
+.top {
+  transform: rotateX(90deg) translateZ(75px);
+  background-image: url(https://m.media-amazon.com/images/S/pv-target-images/13e5e087c310231e8df24d1bda7879c5acc2d0255c450674f30b37fe41f808e2.jpg);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(75px);
+  background-image: url(https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/0662921aa3b81ff85737ddeb56deefab.jpe);
+}
+.anime:hover {
+  animation: rotateForward 1s forwards;
+}
+.anime:hover .content {
+  animation: shake 0.5s infinite alternate;
+}
+.anime.rotateForward {
+  animation: rotateForward 1s forwards;
+}
+
+/* Rimuovi l'animazione per il paragrafo all'interno dell'elemento <li> */
+.anime p {
+  animation: none;
+}
+@keyframes rotateCube {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+p {
+  font-size: 30px; /* Imposta la dimensione del testo a 16 pixel */
+}
+li {
+  font-size: 30px; /* Imposta la dimensione del testo a 16 pixel */
+}
 @-webkit-keyframes text-focus-in {
   0% {
     -webkit-filter: blur(12px);
@@ -39,127 +136,22 @@
   }
 }
 
-img {
-  width: 300px;
-  height: 200px;
-  max-width: 30%;
-  height: auto;
-}
-body {
-  background-color: grey;
-}
-h2 {
-  font-weight: bold;
-}
-
-img {
-  width: 200px;
-  height: 100px;
-  max-width: 30%;
-  height: auto;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative; /* Abilita il posizionamento relativo */
-  top: -220px; /* Sposta l'immagine verso il basso di 20px rispetto alla sua posizione originale */
-  left: 330px;
-}
-.img-hover:hover {
-  /* Aggiungi gli effetti desiderati qui */
-  border: 2px solid rgb(159, 24, 201); /* Esempio di bordo rosso */
-}
-a {
-  color: rgb(159, 24, 201);
-}
-p {
-  overflow: hidden;
-  margin: 0; /* Imposta il margine del paragrafo a zero */
-  padding: 0; /* Imposta il padding del paragrafo a zero */
-  vertical-align: middle;
-  display: inline;
-  color: #000000; /* Cambia il colore del testo */
-  font-size: 18px; /* Aumenta la dimensione del testo */
-  line-height: 1.5; /* Aumenta l'interlinea per migliorare la leggibilità */
-}
-/* Regola la larghezza dell'immagine */
-.img-hover {
-  width: 500px;
-  font-size: 20px; /* Aumenta la grandezza del testo */
-  font-family: Arial, sans-serif; /* Utilizza un font più decente */
-}
-hr {
-  height: 4px; /* Altezza della riga */
-  background-color: black; /* Colore della riga */
-  border: none;
-  margin-top: 20px; /* Spazio superiore */
-  margin-bottom: 20px; /* Spazio inferiore */
-}
-h1,
-li {
-  margin-bottom: 10px;
-  font-size: 24px; /* Dimensioni del testo */
-  font-weight: bold; /* Spessore del testo */
-}
-.container {
-  text-align: center;
-}
-
-@keyframes burn {
+@keyframes rotateForward {
   0% {
-    color: rgb(0, 0, 0);
-    text-shadow: 0 0 10px #f00, 0 0 20px rgb(202, 81, 11), 0 0 30px #f00,
-      0 0 40px #f00, 0 0 50px #f00, 0 0 60px rgb(8, 228, 155), 0 0 70px #f00,
-      0 0 80px #f00;
+    transform: rotateX(0) translateY(0);
   }
-  50% {
-    color: rgb(0, 0, 0);
-    text-shadow: none;
+  90% {
+    transform: rotateX(90deg) translateY(100%);
   }
   100% {
-    color: rgb(0, 0, 0);
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.336), 0 0 20px #f00, 0 0 30px #f00,
-      0 0 40px #f00, 0 0 50px #f00, 0 0 60px #f00, 0 0 70px #f00, 0 0 80px #f00;
+    transform: rotateX(90deg) translateY(0);
   }
 }
-.title,
-.burning-text {
-  animation: burn 5s infinite;
-  margin-top: 20px;
-}
-
-.table-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.column {
-  display: flex;
-}
-
-.space {
-  flex: 1;
-  padding: 20px;
-  border: 1px solid #ccc;
-  margin: 5px;
-  background-color: #f0f0f0;s
-}
-.cell {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin: 5px;
-}
-
-.cell-content {
-  flex: 1;
-}
-
-.cell-empty {
-  width: 20px; /* Larghezza dello spazio vuoto */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5px);
+  } /* Cambia la trasformazione secondo le tue esigenze */
 }
