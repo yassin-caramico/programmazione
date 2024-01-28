@@ -36,14 +36,15 @@ img {
 }
 
 .cube-container {
-  transform: scale(1);
-  position: absolute;
-  left: 900px;
-  top: 300px;
+  position: relative;
+
   width: 100px;
-  height: 200px;
-  perspective: 6000px;
-  margin: 0 auto;
+  height: 100px;
+  perspective: 600px;
+  margin: auto;
+  filter: drop-shadow(
+    0 250px 20px rgba(0, 0, 0, 0.3)
+  ); /* Applica l'ombra che si proietta verso il basso */
 }
 .cube {
   width: 100%;
@@ -56,7 +57,7 @@ img {
   position: absolute;
   width: 150px;
   height: 150px;
-  border: 1px solid #000;
+  border: 5px solid #000;
   background-size: cover;
 }
 .front {
@@ -84,13 +85,10 @@ img {
   background-image: url(https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/0662921aa3b81ff85737ddeb56deefab.jpe);
 }
 .anime:hover {
-  animation: rotateForward 1s forwards;
-}
-.anime:hover .content {
-  animation: shake 0.5s infinite alternate;
-}
-.anime.rotateForward {
-  animation: rotateForward 1s forwards;
+  transform: translateY(-5px); /* Sposta la scritta leggermente verso l'alto */
+  font-size: 0.8em; /* Riduci la dimensione del carattere */
+  opacity: 0.5; /* Riduci l'opacità */
+  transition: transform 0.5s ease, font-size 0.5s ease, opacity 0.5s ease;
 }
 
 /* Rimuovi l'animazione per il paragrafo all'interno dell'elemento <li> */
@@ -134,24 +132,4 @@ li {
     filter: blur(0px);
     opacity: 1;
   }
-}
-
-@keyframes rotateForward {
-  0% {
-    transform: rotateX(0) translateY(0);
-  }
-  90% {
-    transform: rotateX(90deg) translateY(100%);
-  }
-  100% {
-    transform: rotateX(90deg) translateY(0);
-  }
-}
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(5px);
-  } /* Cambia la trasformazione secondo le tue esigenze */
 }

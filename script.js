@@ -9,19 +9,19 @@ var isAnimating = false;
 
 // Funzione per avviare l'animazione
 function startAnimation() {
-  if (!isAnimating) {
-    attack_on_titan.classList.add("rotateForward");
-    isAnimating = true;
-  }
+  attack_on_titan.classList.add("attack-animation");
 }
 
 // Funzione per interrompere l'animazione
 function stopAnimation() {
-  if (isAnimating && !isInside) {
-    attack_on_titan.classList.remove("rotateForward");
-    isAnimating = false;
-  }
+  attack_on_titan.classList.remove("attack-animation");
 }
+
+// Aggiungi event listener per mouseover all'elemento <li>
+attack_on_titan.addEventListener("mouseover", startAnimation);
+
+// Aggiungi event listener per mouseout all'elemento <li>
+attack_on_titan.addEventListener("mouseout", stopAnimation);
 
 // Aggiungi event listener per mouseenter all'elemento <li>
 attack_on_titan.addEventListener("mouseenter", function () {
@@ -50,3 +50,4 @@ if (attack_on_titan !== null) {
 } else {
   console.log("L'elemento con ID 'attack_on_titan' non esiste nel documento.");
 }
+attack_on_titan.classList.remove("anime");
