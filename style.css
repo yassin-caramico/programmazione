@@ -45,7 +45,24 @@ img {
   filter: drop-shadow(
     0 250px 20px rgba(0, 0, 0, 0.3)
   ); /* Applica l'ombra che si proietta verso il basso */
+  opacity: 0; /* Opacità iniziale del cubo */
+  transition: opacity 1s ease;
+  /* Opacità iniziale del cubo */
 }
+.anime-container:hover {
+  transform: translateY(-5px); /* Sposta l'intero elemento verso l'alto */
+  font-size: 0.8em; /* Riduci la dimensione del carattere */
+  opacity: 1; /* Riduci l'opacità */
+}
+.anime-container {
+  position: relative;
+  transition: transform 0.5s ease, font-size 0.5s ease, opacity 0.5s ease; /* Transizioni per l'animazione */
+}
+
+.anime-container:hover .cube-container {
+  opacity: 2; /* Opacità completa del cubo quando il cursore è sopra l'elemento "Attack on Titan" */
+}
+
 .cube {
   width: 100%;
   height: 100%;
