@@ -34,7 +34,40 @@ img {
   position: relative;
   right: 200px;
 }
-
+.table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  margin-top: 20px;
+}
+.table-container {
+  margin: 20px auto;
+  width: 80%;
+}
+.anime {
+  position: relative;
+  overflow: hidden;
+}
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Assicura che il video sia dietro il contenuto della cella */
+}
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  vertical-align: top; /* Allinea il contenuto delle celle in alto */
+}
+.a {
+  position: relative;
+  top: 50px;
+  left: 50px;
+}
 .cube-container {
   position: relative;
 
@@ -43,7 +76,7 @@ img {
   perspective: 600px;
   margin: auto;
   filter: drop-shadow(
-    0 250px 20px rgba(0, 0, 0, 0.3)
+    0 50px 20px rgba(0, 0, 0, 0.3)
   ); /* Applica l'ombra che si proietta verso il basso */
   opacity: -5; /* Opacità iniziale del cubo */
   transition: opacity 1.5s ease;
@@ -56,6 +89,8 @@ img {
 }
 .anime-container {
   position: relative;
+  top: 10px;
+  left: -10px;
   transition: transform 0.5s ease, font-size 0.5s ease, opacity 0.5s ease; /* Transizioni per l'animazione */
 }
 
@@ -145,16 +180,10 @@ img {
   transform: rotateX(-90deg) translateZ(75px);
   background-image: url(https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/0662921aa3b81ff85737ddeb56deefab.jpe);
 }
-@keyframes rotateCube {
-  from {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  to {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
-}
+
 p {
   font-size: 30px; /* Imposta la dimensione del testo a 16 pixel */
+  text-shadow: 5px 5px 10px #000;
 }
 li {
   font-size: 30px; /* Imposta la dimensione del testo a 16 pixel */
@@ -181,5 +210,13 @@ li {
     -webkit-filter: blur(0px);
     filter: blur(0px);
     opacity: 1;
+  }
+}
+@keyframes rotateCube {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
   }
 }
